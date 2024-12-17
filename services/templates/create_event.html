@@ -1,0 +1,15 @@
+
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home - My Website{% endblock %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="title" placeholder="Event Title">
+    <textarea name="description" placeholder="Event Description"></textarea>
+    <input type="datetime-local" name="date">
+    <button type="submit">Create Event</button>
+</form>
+{% endblock %}

@@ -1,0 +1,21 @@
+<!-- templates/user_dashboard.html -->
+{% extends 'base.html' %}
+
+{% block title %}User Dashboard - My Website{% endblock %}
+
+{% block content %}
+<h1>Welcome {{ user.username }}</h1>
+
+<p><strong>First Name:</strong> {{ first_name }}</p>
+<p><strong>Last Name:</strong> {{ last_name }}</p>
+<p><strong>Email:</strong> {{ email }}</p>
+
+<h2>Registered Events</h2>
+<ul>
+    {% for event in registered_events %}
+        <li>{{ event.name }} ({{ event.date }})</li>
+    {% empty %}
+        <li>No events registered yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

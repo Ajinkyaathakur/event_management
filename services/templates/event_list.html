@@ -1,0 +1,16 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home - My Website{% endblock %}
+
+{% block content %}
+<h1>Events</h1>
+{% for event in events %}
+    <div>
+        <h2>{{ event.title }}</h2>
+        <p>{{ event.description }}</p>
+        <p>{{ event.date }}</p>
+        <a href="{% url 'register_for_event' event.id %}">Register</a>
+    </div>
+{% endfor %}
+{% endblock %}
